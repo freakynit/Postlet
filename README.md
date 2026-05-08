@@ -7,7 +7,7 @@ Postlet is a simple static blog publisher built around markdown files and a smal
 Postlet keeps blog publishing straightforward: write markdown, run one build command, and ship static files.
 It stays small by default, but gives you plugin hooks when you need to extend behavior.
 
-> The official Postlet [homepage](https://postlet.pagey.site/) and author's own [personal blog]([nb1t](https://nb1t.sh)) are built and published using Postlet.
+> The official Postlet [homepage](https://postlet.pagey.site/) and author's own [personal blog](https://nb1t.sh) are built and published using Postlet.
 
 ## Features
 
