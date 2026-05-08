@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="{{ site.language or 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ title }}</title>
+  {{ metaHtml | safe }}
+  {% if config.build.tailwindPlayCdn %}<script src="https://cdn.tailwindcss.com"></script>{% endif %}
+  <link rel="stylesheet" href="{{ pathFor(config.build.theme or 'themes/default.css') }}">
+  {% if frontmatter.css %}<link rel="stylesheet" href="{{ pathFor(frontmatter.css) }}">{% endif %}
+</head>
+<body class="antialiased">
+  <header class="border-b">
+    <div class="max-w-3xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="{{ pathFor('/') }}" class="font-semibold text-lg">{{ siteTitle }}</a>
+      <nav class="site-nav text-sm">{{ navHtml | safe }}</nav>
+    </div>
+  </header>
+  <main class="max-w-3xl mx-auto px-4 py-10 prose">
+    <article>
+      <h1 class="text-3xl font-bold mb-2">{{ pageTitle }}</h1>
+      {{ dateLine | safe }}
+      <div class="mt-2 mb-6">{{ tagsHtml | safe }}</div>
+      <div class="page-content">{{ body | safe }}</div>
+      {{ relatedHtml | safe }}
+    </article>
+  </main>
+  <footer class="border-t mt-16">
+    <div class="max-w-3xl mx-auto px-4 py-6 text-sm site-footer">{{ footerHtml | safe }}</div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,47 @@
+{
+  "site": {
+    "title": "Postlet",
+    "description": "A tiny static blog generator with a plugin pipeline, markdown + frontmatter pages, and theme support",
+    "url": "http://localhost:8080",
+    "basePath": "",
+    "author": "Author's Name",
+    "language": "en"
+  },
+  "build": {
+    "pagesDir": "pages",
+    "outDir": "dist",
+    "stylesDir": "styles",
+    "themesDir": "themes",
+    "templatesDir": "templates",
+    "theme": "themes/nord.css",
+    "tailwindPlayCdn": true
+  },
+  "plugins": [
+    "./plugins/image-sizing.js",
+    "./plugins/analytics.js"
+  ],
+  "pluginConfigs": {
+    "analytics": {
+      "bodyEndHtml": "<span style=\"display:none;\">YOU CAN PLACE ANY CUSTOM HTML HERE THAT WILL GO BEFORE CLOSING BODY TAG ... THIS IS DRIVEN BY custom analytics.js plugin which is already packaged in the repo</span>"
+    }
+  },
+  "relatedPosts": {
+    "enabled": true,
+    "strategy": "keywords",
+    "topK": 3,
+    "minScore": 0.05,
+    "writeBackToFrontmatter": false,
+    "strategies": {
+      "keywords": {
+        "minTokenLength": 3,
+        "maxContentChars": 12000
+      },
+      "embeddings": {
+        "baseUrl": "https://openrouter.ai/api/v1",
+        "apiKey": "sk-or-v1-<YOUR API KEY>",
+        "model": "perplexity/pplx-embed-v1-0.6b",
+        "cacheFile": ".embeddings-cache.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+/* Per-page override example: uses theme custom properties so it respects the active theme */
+article > h1 { letter-spacing: -0.02em; }
